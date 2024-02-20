@@ -27,9 +27,10 @@ jobs:
           node-version: '20'
 
       - name: Set API key environment variable
-        run: echo "API_KEY=${{ secrets.API_KEY }}" >> .env
+        run: echo "API_KEY=${{ secrets.API_KEY }}" >> npcampground/.env
 
       - name: Install dependencies and build
+        working-directory: npcampground
         run: |
           npm install
           npm run build
@@ -40,14 +41,14 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
-          destination: ./_site
+          source: npcampground
+          destination: npcampground/_site
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           artifact-name: site
-          path: _site
+          path: npcampground_site
 
   deploy:
     environment:
@@ -61,11 +62,11 @@ jobs:
         uses: actions/download-artifact@v4.1.2
         with:
           name: site
-          path: _site
+          path: npcampground_site
           
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _site
+          publish_dir: npcampground_site
   
