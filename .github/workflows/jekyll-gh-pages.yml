@@ -45,10 +45,10 @@ jobs:
           destination: npcampground/_site
           
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
-          artifact-name: site
-          path: npcampground_site
+          name: site
+          path: npcampground/_site
 
   deploy:
     environment:
@@ -62,11 +62,11 @@ jobs:
         uses: actions/download-artifact@v4.1.2
         with:
           name: site
-          path: npcampground_site
+          path: npcampground/_site
           
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: npcampground_site
+          publish_dir: npcampground/_site
   
