@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Park Campground Guide | Campground Filter | Portfolio Project</title>
+    <meta name="author" content="Lenora Stevens">
+    <meta name="description" content="This is the Project Page for WDD330 for BYUI for Lenora.">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/images/np-campguide-favicon-black.webp">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <script src="src/scripts/states.js" type="module"></script>
+    <script src="src/scripts/main.js" type="module"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img id="logo" src="src/images/logo-no-background.png" alt="NP Campground Guide Logo">
+            
+            <h1>NP Campground Guide</h1>
+            
+            <label class="choice" title="Pick a State from the list"> Start Here
+                <select id="state" name="state" autofocus required>
+                    <option value="" disabled selected>Select</option>
+                </select>
+            </label>
+            
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- Park Slideshow section -->
+        <h2 id="stateName"></h2>
+        <div class="parks-container">
+            <button class="prev"> &#10094; </button>
+            <div class="slide">
+            <!-- dynamically fill in the slides with sort-parks.js -->            
+            </div>           
+            <button class="next"> &#10095; </button>            
+        </div>
+
+        <!-- Campground Details Section -->
+        <div class="parkCard">
+            <div class="park-info">
+                <!-- dynamically filled with Park.js -->                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Lenora Stevens  | <a id="plan" href="src/siteplan.html">Siteplan</a></p>
+    </footer>
+
+</body>
+
+</html>
