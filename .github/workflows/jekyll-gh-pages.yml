@@ -45,11 +45,13 @@ jobs:
           destination: npcampground/_site
           
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: echapmanFromBunnings/upload-artifact@3.0.0
         with:
           name: site
           path: npcampground/_site
-
+          if-no-files-found: error 
+          retention-days: 7
+          
   deploy:
     environment:
       name: github-pages
@@ -58,11 +60,11 @@ jobs:
     needs: build
     
     steps:
-      - name: Download a Build Artifact
+      - name: Download Artifact
         uses: actions/download-artifact@v4.1.2
         with:
           name: site
-          path: npcampground/_site
+          path: dist
           
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
