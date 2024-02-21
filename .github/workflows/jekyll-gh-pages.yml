@@ -55,7 +55,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.https://lenorastevens.github.io/NPCampground }}
+      url: https://lenorastevens.github.io/NPCampground
     runs-on: ubuntu-latest
     needs: build
     
