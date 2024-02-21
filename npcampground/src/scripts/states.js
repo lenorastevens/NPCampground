@@ -1,5 +1,5 @@
 // url to json file of countries
-const statesURL = "https://lenorastevens.github.io/National-Parks-Campground-Guide/data/states.json"
+const statesURL = "https://lenorastevens.github.io/NPCampground/npcampground/src/data/states.json"
 
 // fetch request for countries file
 async function getState() {
