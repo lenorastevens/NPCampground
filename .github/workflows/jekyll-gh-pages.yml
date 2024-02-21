@@ -45,7 +45,7 @@ jobs:
           destination: npcampground/_site
           
       - name: Upload artifact
-        uses: echapmanFromBunnings/upload-artifact@3.0.0
+        uses: actions/upload-artifact@v4.3.1
         with:
           name: site
           path: npcampground/_site
