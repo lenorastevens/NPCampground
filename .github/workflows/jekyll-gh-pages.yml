@@ -63,12 +63,13 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4.1.2
         with:
-          name: site
+          name: github-pages
           path: npcampground/_site
                    
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: npcampground/_site
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: site
+          preview: false
   
